@@ -1,5 +1,7 @@
 (function($){
   $(function(){
+    $('.tabss').tabs({"swipeable":true});
+    // $('#tabs').tabs("select", "swipe-2");
 
     $('.sidenav').sidenav();
 

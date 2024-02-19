@@ -10,6 +10,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
   <title>Starter Template - Materialize</title>
 
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -27,18 +29,21 @@
       'GRAD' 0,
       'opsz' 24
     }
-    </style>
+  </style>
 
-<script src="cordova.js"></script>
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="js/materialize.js"></script>
-<script src="js/init.js"></script>
+  <!--  Scripts-->
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/scripts.js"></script>
+
+  <script src="cordova.js"></script>
 </head>
 <body>
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
+      <ul class="right hide-on-med-and-down tabss" id="tabs">
+        <li><a href="#swipe-1">Home</a></li>
+        <li><a href="#swipe-2">Search</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
@@ -63,7 +68,7 @@
   </div>
 
 
-  <div class="container">
+  <div class="container" id="swipe-1">
     <div class="section">
 
       <!--   Icon Section   -->
@@ -127,14 +132,16 @@
     <br><br>
   </div>
 
+  <div class="container" id="swipe-2">
+      <input type="search" name="search-news" id="search-news" placeholder="Search space news...">
+  </div>
+
   <footer class="page-footer orange">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Company Bio</h5>
           <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-
-
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Settings</h5>
@@ -158,16 +165,13 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
       </div>
     </div>
   </footer>
 
 
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+  
 
-  </body>
+</body>
 </html>
