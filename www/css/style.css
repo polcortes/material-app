@@ -12,3 +12,50 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
+
+#ajax-results {
+  display: block;
+}
+
+#ajax-results article {
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#ajax-results article:hover {
+  background-color: #d3d3d3;
+}
+
+.carousel {
+  height: fit-content;
+}
+
+@media screen and (max-width: 600px) {
+  .carousel {
+    height: 1400px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .carousel {
+    height: 1000px;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .carousel {
+    height: 900px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .carousel {
+    height: 800px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .carousel {
+    height: 600px;
+  }
+}

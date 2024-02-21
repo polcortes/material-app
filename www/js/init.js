@@ -1,9 +1,9 @@
 (function($){
   $(function(){
-    $('.tabss').tabs({"swipeable":true});
-    // $('#tabs').tabs("select", "swipe-2");
+    $('.tabs').tabs({ "swipeable": true });
+    // $('.tabs').tabs("select", "swipe-2");
 
-    $('.sidenav').sidenav();
+    // $('.sidenav').sidenav();
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space
