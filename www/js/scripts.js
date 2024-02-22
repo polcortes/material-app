@@ -7,11 +7,15 @@ $(function() {
                 success: function(response) {
                     let articles = '';
                     for (let article of response) {
-                        articles += `<li class="collection-item" onclick="$('.tabs').tabs('select', 'swipe-2'); callAjax2(${article.title});">${article.title}</li>`
+                        articles += `<li style="cursor: pointer;" class="collection-item">${article.title}</li>`
                     }
-                    $("#ajax-results").html(
-                        $(articles)
-                    )
+
+                    $("#ajax-results").html($(articles))
+
+                    $(".collection-item").click(function() {
+                        $('.tabs').tabs('select', 'swipe-2');
+                        callAjax2($(this).text());
+                    })
 
                     console.log(typeof response)
                 }
@@ -39,56 +43,82 @@ $(function() {
                                     </p>
                                 </div>
                                 <div class="card-action">
-                                    <a href="${article.url}">Go to the article</a>
+                                    <a 
+                                        href="${article.url}"
+                                        target="_blank"    
+                                    >
+                                        Go to the article
+                                    </a>
                                 </div>
                             </div>
                             </div>
                         </div>
                         `
                     }
-                    $("#ajax-results").html(
-                        $(articles)
-                    )
+
+                    $("#ajax-result-2").html($(articles))
 
                     console.log(typeof response)
                 }
             })
         }
+
+        function callAjax3() {
+            $.ajax({
+                url: "https://api.spaceflightnewsapi.net/v3/articles?_limit=10",
+                type: "GET",
+                success: function(response) {
+                    let articles = '';
+                    for (let article of response) {
+                        articles += `
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="${article.imageUrl}">
+                                    <span class="card-title">${article.title}</span>
+                                </div>
+                                <div class="card-content">
+                                    <p class="article-summary">
+                                        ${article.summary}
+                                    </p>
+                                </div>
+                                <div class="card-action">
+                                    <a 
+                                        href="${article.url}"
+                                        target="_blank"
+                                    >
+                                        Link to the article
+                                    </a>
+                                </div>
+                            </div>
+                        `
+                    }
+
+                    $("#all-articles-container").html($(articles))
+                }
+            })
+        }
+
+        callAjax3();
     });
 })
 
 /*
-$(".loading").fadeIn('slow');
-$.ajax({
-    url: "url",
-    data: "data",
-    dataType: "dataType",
-    success: function (response) {
-    }
-});
+<div class="card">
+    <div class="card-image">
+        <img src="images/sample-1.jpg">
+        <span class="card-title">Card Title</span>
+    </div>
+    <div class="card-content">
+        <p>I am a very simple card. I am good at containing small bits of information.
+        I am convenient because I require little markup to use effectively.</p>
+    </div>
+    <div class="card-action">
+        <a 
+            href="#"
+            target="_blank"
+        >
+            This is a link
+        </a>
+    </div>
+</div>
 */
-
-/*document.addEventListener('DOMContentLoaded', function() {
-    const options = {
-        duration: 300,
-        onShow: null,
-        swipeable: true,
-        responsiveThreshold: Infinity
-    };
-
-    const tabsContainer = document.querySelector(".tabs");
-    const instance = M.Tabs.init(tabsContainer, options);
-
-    // Seleccionar la pestaña "swipe-1"
-    instance.select("swipe-1");
-});*/
-
-    /*$(".loading").fadeIn('slow');
-    $.ajax({
-        url: "url",
-        data: "data",
-        dataType: "dataType",
-        success: function (response) {
-            
-        }
-    });*/
