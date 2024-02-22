@@ -29,11 +29,7 @@
 .carousel {
   height: fit-content;
 }
- 
-/*
- * afegir la class tabs-content a cada div de contingut
- * per solucionar el contingut scollable de cada pestanya
- */
+
 .tabs-content {
   height: 100%;
   overflow-y: scroll !important;
@@ -51,33 +47,3 @@
 .carousel {
   height: 80vh;
 }
-
-/*@media screen and (max-width: 600px) {
-  .carousel {
-    height: 1400px;
-  }
-}
-
-@media screen and (min-width: 600px) {
-  .carousel {
-    height: 1000px;
-  }
-}
-
-@media screen and (min-width: 820px) {
-  .carousel {
-    height: 900px;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .carousel {
-    height: 800px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .carousel {
-    height: 600px;
-  }
-}*/
